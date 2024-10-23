@@ -53,6 +53,13 @@ npm run dev
 ```
 Ao executar a API, a tabela de produtos e o seeding do banco de dados serão feitos automaticamente.
 
+### Docker
+
+Para executar o Docker, basta abrir o terminal e executar os seguintes comandos:
+```bash
+docker-compose up --build
+```
+
 Com a API rodando, basta testar as requisições no seu Client API.
 
 ### GET
