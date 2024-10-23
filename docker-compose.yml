@@ -1,30 +1,41 @@
-version: '3'
+version: '3.8'
+
 services:
-  web:
-    build: .
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"  # Mapeia a porta 3000 do contêiner para a porta 3000 do host
+      - "3000:3000"
     environment:
-      - PGUSER=postgres
-      - PGPASSWORD=example
-      - PGDATABASE=meubanco
-      - PGHOST=db  # Nome do serviço PostgreSQL
+      - PGUSER=${PGUSER}
+      - PGPASSWORD=${PGPASSWORD}
+      - PGHOST=db
       - PGPORT=5432
+      - PGDATABASE=${PGDATABASE}
     depends_on:
       - db
     volumes:
-      - .:/usr/src/app
+      - .:/app
+    networks:
+      - app-network
 
   db:
-    image: postgres:13
+    image: postgres:15
+    restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: example
-      POSTGRES_DB: meubanco
+      POSTGRES_USER: ${PGUSER}
+      POSTGRES_PASSWORD: ${PGPASSWORD}
+      POSTGRES_DB: ${PGDATABASE}
     ports:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
 
 volumes:
   pgdata:
+
+networks:
+  app-network:
