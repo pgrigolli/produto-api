@@ -27,7 +27,7 @@ Antes de começar, você precisará ter instalado:
 Clone este repositório para sua máquina local:
 
 ```bash
-git clone https://github.com/seu-usuario/produto-api.git
+git clone https://github.com/pgrigolli/produto-api.git
 ```
 
 ### Configure a pasta .env
