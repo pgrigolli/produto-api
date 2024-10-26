@@ -1,4 +1,3 @@
-// db.js
 require('dotenv').config();
 const { Pool } = require('pg');
 const fs = require('fs');
@@ -23,7 +22,12 @@ const runScript = async (filePath) => {
     } 
 };
 
-runScript('sql/seed.sql')
-runScript('sql/createTable.sql')
+const runAllScripts = async () => {
+    // Execute os scripts na ordem correta
+    await runScript('sql/createTable.sql');
+    await runScript('sql/seed.sql');
+};
+
+runAllScripts();
 
 module.exports = pool; // Exporte o pool
