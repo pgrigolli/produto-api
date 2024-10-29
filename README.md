@@ -57,7 +57,7 @@ Ao executar a API, a tabela de produtos e o seeding do banco de dados serão fei
 
 Para executar o Docker, basta abrir o terminal e executar os seguintes comandos:
 ```bash
-docker-compose up --build
+docker compose up -d
 ```
 
 Com a API rodando, basta testar as requisições no seu Client API.
