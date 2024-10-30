@@ -47,6 +47,9 @@ Instale as dependencias
 ```bash
 npm i
 ```
+
+### Caso estaje no Windows, execute o Docker Desktop antes de rodar o comando abaixo.
+
 Para executar o Docker, basta abrir o terminal e executar os seguintes comandos:
 ```bash
 docker compose up -d
