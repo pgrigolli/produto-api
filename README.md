@@ -47,18 +47,18 @@ Instale as dependencias
 ```bash
 npm i
 ```
-Execute a API
-```bash
-npm run dev
-```
-Ao executar a API, a tabela de produtos e o seeding do banco de dados serão feitos automaticamente.
 
-### Docker
+##### Caso esteja no Windows, execute o Docker Desktop antes de rodar o comando abaixo.
 
 Para executar o Docker, basta abrir o terminal e executar os seguintes comandos:
 ```bash
 docker compose up -d
 ```
+Execute a API
+```bash
+npm run dev
+```
+Ao executar a API, a tabela de produtos e o seeding do banco de dados serão feitos automaticamente.
 
 Com a API rodando, basta testar as requisições no seu Client API.
 
