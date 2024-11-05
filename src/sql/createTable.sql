@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS products (
     id SERIAL PRIMARY KEY,
-    description VARCHAR(255) NOT NULL,
-    price NUMERIC NOT NULL,
-    quantity INTEGER NOT NULL,
+    description VARCHAR(255),
+    price NUMERIC,
+    quantity INTEGER,
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
