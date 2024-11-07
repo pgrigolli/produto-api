@@ -25,7 +25,12 @@ const runScript = async (filePath) => {
 const runAllScripts = async () => {
     // Execute os scripts na ordem correta
     await runScript('sql/createTable.sql');
-    await runScript('sql/seed.sql');
+
+    const qtdRows = pool.query("SELECT COUNT (*) FROM PRODUCTS");
+
+    if (qtdRows === 0){
+        await runScript('sql/seed.sql');
+    }
 };
 
 runAllScripts();
