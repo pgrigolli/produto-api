@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 
     try {
         const result = await pool.query(
-            'SELECT * FROM products'
+            'SELECT * FROM products ORDER BY id'
         )
         res.status(200).json(result.rows)
     } catch (err) {
